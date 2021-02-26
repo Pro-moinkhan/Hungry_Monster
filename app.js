@@ -9,7 +9,9 @@ const search = async () => {
         document.getElementById('errorDiv').style.display="none";
     }
     catch {
+        document.getElementById('errorDiv').style.display="block";
         displayError('Something went wrong. please try again later!');
+        document.getElementById('ingredientDisplay').style.display="none";
     }
 }
 
@@ -44,7 +46,9 @@ const displayIngredient = async idInfo => {
         document.getElementById('errorDiv').style.display="none";
     }
     catch {
-        displayError('server problem, could not load yor food ingredients try again later!')
+        document.getElementById('errorDiv').style.display="block";
+        displayError('server problem, could not load yor food ingredients try again later!');
+        document.getElementById('ingredientDisplay').style.display="none";
     }
 }
 

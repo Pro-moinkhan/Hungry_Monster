@@ -62,5 +62,15 @@ body{
 
 #ingredientDisplay{
     display: none;
-    margin-bottom: 500px;
+    margin-bottom: 30px;
+}
+
+/* error div */
+#Error{
+    padding: 100px 10px 10px 150px;
+}
+#Error h3{
+    font-size: 50px;
+    font: 700;
+    color: rgb(255, 0, 85);
 }

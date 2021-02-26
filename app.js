@@ -6,6 +6,7 @@ const search = async () => {
         const res = await fetch(url);
         const data = await res.json();
         displaySearch(data.meals);
+        document.getElementById('errorDiv').style.display="none";
     }
     catch {
         displayError('Something went wrong. please try again later!');
@@ -34,10 +35,17 @@ const displaySearch = search => {
 
 // fetching ingredients:
 const displayIngredient = async idInfo => {
+    document.getElementById('ingredientDisplay').style.display="block";
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idInfo}`
+    try {
         const res = await fetch(url);
         const data = await res.json();
         displayIngredientDetail(data.meals);
+        document.getElementById('errorDiv').style.display="none";
+    }
+    catch {
+        displayError('server problem, could not load yor food ingredients try again later!')
+    }
 }
 
 
@@ -76,20 +84,8 @@ const displayIngredientDetail = ingredients => {
         ingredientDis.appendChild(ingredientDiv);
     })
 }
-// function addingNumber(value) {
-//     let values = [];
-//     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,]
-//     for (let i = 0; i < array.length; i++) {
-//         const element = array[i];
-//         const add = value + element;
-//         values.push(add);
-//     }
-//     return values;
-// }
-// const result = addingNumber('strIngredient');
-// const array2 = ;
-
-const displayError = error =>{
+// error massage:
+const displayError = error => {
     const errorDiv = document.getElementById('errorDiv');
     errorDiv.innerText = error;
 }

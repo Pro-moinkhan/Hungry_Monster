@@ -59,3 +59,8 @@ body{
     width: 400px;
     height: 300px;
 }
+
+#ingredientDisplay{
+    display: none;
+    margin-bottom: 500px;
+}

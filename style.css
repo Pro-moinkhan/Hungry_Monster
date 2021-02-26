@@ -1,3 +1,61 @@
 body{
-    background-color: blue;
+    width: 70%;
+    margin: auto;
+    padding: 0;
+    background-color: #fff;
+}
+/* search area */
+.divSearch{
+    margin-top: 100px;
+}
+.searchDiv{
+    display: container;
+    margin: auto;
+}
+
+#inputFood{
+    width: 500px;
+    height: 47.9px;
+    border-radius: 12px 0px 0px 12px;
+    border: 1px solid rgb(12, 172, 33);
+}
+
+#SearchBtn{
+    height: 47.9px;
+    border-radius: 0px 12px 12px 0px;
+}
+
+.card{
+    border-radius: 12px;
+    background-color: honeydew;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    border: none;
+}
+.foodRows{
+    margin-bottom: 2em;
+}
+.card:hover{
+    box-shadow: gray 5px 5px 20px;
+    transition:all .4s;
+    cursor: pointer;
+}
+#foodImg{
+    width: 18rem;
+    height: 250px;
+    border-radius: 12px 12px 0px 0px;
+}
+#foodName{
+    image-rendering: optimizeSpeed;
+    padding: 0px 5px 12px 5px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 0px 0px 12px 12px;
+}
+
+/* ingredient */
+#ingredientImg{
+    width: 400px;
+    height: 300px;
 }

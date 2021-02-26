@@ -43,7 +43,6 @@ const displayIngredient = async idInfo => {
 
 // displaying ingredients:
 const displayIngredientDetail = ingredients => {
-    console.log(ingredients);
     const ingredientDis = document.getElementById('ingredientDisplay');
     ingredientDis.innerHTML = '';
     ingredients.forEach(ingredientsElement => {

@@ -6,10 +6,10 @@ const search = async () => {
         const res = await fetch(url);
         const data = await res.json();
         displaySearch(data.meals);
-        document.getElementById('errorDiv').style.display="none";
+        document.getElementById('Error').style.display="none";
     }
     catch {
-        document.getElementById('errorDiv').style.display="block";
+        document.getElementById('Error').style.display="block";
         displayError('Something went wrong. please try again later!');
         document.getElementById('ingredientDisplay').style.display="none";
     }
@@ -43,10 +43,11 @@ const displayIngredient = async idInfo => {
         const res = await fetch(url);
         const data = await res.json();
         displayIngredientDetail(data.meals);
-        document.getElementById('errorDiv').style.display="none";
+        document.getElementById('Error').style.display="none";
+
     }
     catch {
-        document.getElementById('errorDiv').style.display="block";
+        document.getElementById('Error').style.display="block";
         displayError('server problem, could not load yor food ingredients try again later!');
         document.getElementById('ingredientDisplay').style.display="none";
     }
@@ -61,7 +62,8 @@ const displayIngredientDetail = ingredients => {
         const ingredientDiv = document.createElement('div');
         ingredientDiv.className = 'ingredient';
         ingredientDiv.innerHTML = `
-        <div class="card">
+        <div id="ErrorDiv" class="card ">
+            <span id="x_btn" onclick="display()">X</span>
             <img id="ingredientImg" src="${ingredientsElement.strMealThumb}" alt="img_error">
             <div class="card-body">
             <h1> ${ingredientsElement.strMeal} </h1>
@@ -93,3 +95,8 @@ const displayError = error => {
     const errorDiv = document.getElementById('errorDiv');
     errorDiv.innerText = error;
 }
+// cancel btn:
+const display = () => {
+    document.getElementById('ErrorDiv').style.display="none";
+}
+
